@@ -1,8 +1,6 @@
 // fila.h - implementacao dinamica sequencial de fila
-
 #include <stdlib.h>
-
-
+#define avanca(i) (i = (i+1) % F->max)
 
 typedef int Itemf;
 
@@ -33,7 +31,7 @@ int cheiaf(Fila F) {
 }
 
 void enfileira(Itemf x, Fila F) {
-   if( cheiaf(F) ) { puts("fila cheia!"); abort(); }
+   if(cheiaf(F) ) { puts("fila cheia!"); abort();}
    F->item[F->final] = x;
    avanca(F->final);
    F->total++;
